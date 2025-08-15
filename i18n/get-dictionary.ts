@@ -1,33 +1,34 @@
-// i18n/get-dictionary.ts
-import 'server-only';
 import type { Locale } from './config';
 import en from './dictionaries/en.json';
 import pt from './dictionaries/pt.json';
 import es from './dictionaries/es.json';
 
-function deepMerge<T>(base: T, over: Partial<T> | undefined): T {
-  if (!over) return base;
-  if (Array.isArray(base)) return (over as unknown as T) ?? base;
-  if (base && typeof base === 'object') {
-    const out: any = { ...base };
-    for (const k of Object.keys(over as any)) {
-      const b = (base as any)[k];
-      const o = (over as any)[k];
-      out[k] =
-        b && typeof b === 'object' && !Array.isArray(b)
-          ? deepMerge(b, o)
-          : (o ?? b);
-    }
-    return out;
+type Dict = Record<string, any>;
+
+function deepMerge<T extends Dict, U extends Dict>(base: T, override: U): T & U {
+  const out: Dict = { ...base };
+  for (const key of Object.keys(override)) {
+    const b = (base as Dict)[key];
+    const o = (override as Dict)[key];
+    const bothObjects =
+      b && o &&
+      typeof b === 'object' &&
+      typeof o === 'object' &&
+      !Array.isArray(b) &&
+      !Array.isArray(o);
+
+    out[key] = bothObjects ? deepMerge(b, o) : (o ?? b);
   }
-  return (over as T) ?? base;
+  return out as T & U;
 }
 
-export async function getDictionary(locale: Locale) {
-  const base = en as const;
-  const cand =
-    locale === 'pt' ? (pt as any) :
-    locale === 'es' ? (es as any) :
-    {};
-  return deepMerge(base, cand);
+export async function getDictionary(locale: Locale): Promise<Dict> {
+  // NÃO usar "as const" aqui; apenas mantenha como objetos comuns
+  const base: Dict = en as Dict;
+  const override: Dict =
+    locale === 'pt' ? (pt as Dict) :
+    locale === 'es' ? (es as Dict) :
+    (en as Dict);
+
+  return deepMerge(base, override);
 }
