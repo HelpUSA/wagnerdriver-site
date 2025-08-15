@@ -2,9 +2,7 @@
   "name": "wagner-driver-site-i18n",
   "private": true,
   "version": "1.0.0",
-  "engines": {
-    "node": ">=18.17.0"
-  },
+  "engines": { "node": ">=18.17.0" },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
