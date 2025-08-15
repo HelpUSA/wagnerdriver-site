@@ -1,23 +1,26 @@
 {
   "brand": "WAGNERDRIVER",
+
+  "contacts": {
+    "phonePretty": "+1 (251) 677-8459",
+    "phoneE164": "+12516778459",
+    "smsE164": "+12516778459",
+    "whatsE164": "+12516778459",
+    "email": "wagnermrc@gmail.com"
+  },
+
   "menu": {
-    "ourServices": "Our services",
-    "forBusiness": "For business",
-    "forChauffeurs": "For chauffeurs",
-    "help": "Help",
-    "overview": "Overview",
-    "corporations": "Corporations",
-    "travelAgencies": "Travel agencies",
-    "strategicPartnerships": "Strategic partnerships",
-    "events": "Events",
     "cityToCity": "City-to-City rides",
     "hailing": "Chauffeur hailing",
     "airportTransfers": "Airport transfers",
     "hourly": "Hourly hire",
     "chauffeurService": "Chauffeur service",
     "limousine": "Limousine service",
+    "help": "Help",
+    "contact": "Contact",
     "language": "Language"
   },
+
   "hero": {
     "title": "Chauffeur Service in Gulf Shores",
     "subtitle": "Airport transfers (GUF/PNS/MOB), hourly hire, and city-to-city rides. Book easily — quickest response by phone or SMS.",
@@ -28,33 +31,41 @@
     "to": "To (address / airport)",
     "search": "Search"
   },
+
   "features": [
-    {
-      "title": "Competitive rates",
-      "desc": "Distance-based pricing that is fair and transparent."
-    },
-    {
-      "title": "Seamless travel",
-      "desc": "Complimentary airport wait time and flight tracking."
-    },
-    {
-      "title": "Flexible scheduling",
-      "desc": "Easy changes and clear communication via phone or SMS."
-    }
+    { "title": "Competitive rates", "desc": "Distance-based pricing that is fair and transparent." },
+    { "title": "Seamless travel", "desc": "Complimentary airport wait time and flight tracking." },
+    { "title": "Flexible scheduling", "desc": "Easy changes and clear communication via phone or SMS." }
   ],
+
   "areas": {
     "heading": "Professional private car in Coastal Alabama",
     "desc": "Serving Gulf Shores, Orange Beach, Foley, Fairhope, Mobile (AL) and Pensacola (FL). Airport transfers to GUF, PNS and MOB, city-to-city rides, and hourly hire for errands or events.",
     "airportTransfers": "Airport transfers",
     "hourlyHire": "Hourly hire"
   },
+
+  "contact": {
+    "title": "Contact",
+    "intro": "Talk to us by phone, SMS or WhatsApp. Email replies usually within the same day.",
+    "phone": "Phone",
+    "sms": "SMS",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "formTitle": "Send a message",
+    "name": "Name",
+    "message": "Message",
+    "send": "Send"
+  },
+
   "footer": {
     "company": "Company",
     "explore": "Explore",
-    "forBusiness": "For Business",
     "topRoutes": "Top routes",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "builtBy": "Developed by"
   },
+
   "pages": {
     "airport": {
       "title": "Airport transfers (GUF / PNS / MOB)",
@@ -85,9 +96,6 @@
       "title": "Premium private car service (sedan/SUV)",
       "p1": "While we don’t operate stretch limousines, you’ll enjoy premium private car comfort with professional standards.",
       "p2": "Ask about luggage capacity and child seats when you book."
-    },
-    "business": {
-      "overviewTitle": "Business travel made simple"
     },
     "help": {
       "title": "Help & FAQs",
