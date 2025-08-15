@@ -2,6 +2,9 @@
   "name": "wagner-driver-site-i18n",
   "private": true,
   "version": "1.0.0",
+  "engines": {
+    "node": ">=18.17.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -15,13 +18,13 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^24.2.1",
-    "@types/react": "^19.1.10",
-    "@types/react-dom": "^19.1.7",
-    "autoprefixer": "10.4.19",
-    "postcss": "8.4.38",
-    "rimraf": "5.0.5",
+    "typescript": "^5.5.4",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.23",
+    "@types/node": "^20.12.12",
     "tailwindcss": "3.4.3",
-    "typescript": "^5.4.5"
+    "postcss": "8.4.38",
+    "autoprefixer": "10.4.19",
+    "rimraf": "5.0.5"
   }
 }
