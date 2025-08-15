@@ -1,33 +1,33 @@
 // i18n/get-dictionary.ts
+import 'server-only';
 import type { Locale } from './config';
 import en from './dictionaries/en.json';
 import pt from './dictionaries/pt.json';
 import es from './dictionaries/es.json';
 
-const MAP: Record<Locale, any> = { en, pt, es } as const;
-
-// merge profundo para preencher chaves faltantes com EN
-function deepMerge<T>(base: T, over?: Partial<T>): T {
-  if (over === undefined || over === null) return structuredClone(base);
-  if (Array.isArray(base)) return (over as any) ?? (structuredClone(base) as any);
-  if (typeof base !== 'object' || base === null) return (over as any) ?? (base as any);
-
-  const out: any = {};
-  const keys = new Set([...Object.keys(base as any), ...Object.keys(over as any)]);
-  for (const k of keys) {
-    const bv = (base as any)[k];
-    const ov = (over as any)[k];
-    if (typeof bv === 'object' && bv !== null && !Array.isArray(bv)) {
-      out[k] = deepMerge(bv, ov as any);
-    } else {
-      out[k] = ov === undefined ? bv : ov;
+function deepMerge<T>(base: T, over: Partial<T> | undefined): T {
+  if (!over) return base;
+  if (Array.isArray(base)) return (over as unknown as T) ?? base;
+  if (base && typeof base === 'object') {
+    const out: any = { ...base };
+    for (const k of Object.keys(over as any)) {
+      const b = (base as any)[k];
+      const o = (over as any)[k];
+      out[k] =
+        b && typeof b === 'object' && !Array.isArray(b)
+          ? deepMerge(b, o)
+          : (o ?? b);
     }
+    return out;
   }
-  return out;
+  return (over as T) ?? base;
 }
 
 export async function getDictionary(locale: Locale) {
-  const sel = MAP[locale] ?? en;
-  // EN é a base; o idioma escolhido sobrepõe o que existir
-  return deepMerge(en, sel);
+  const base = en as const;
+  const cand =
+    locale === 'pt' ? (pt as any) :
+    locale === 'es' ? (es as any) :
+    {};
+  return deepMerge(base, cand);
 }
