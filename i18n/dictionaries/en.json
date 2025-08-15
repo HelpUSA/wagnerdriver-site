@@ -1,0 +1,102 @@
+{
+  "brand": "WAGNERDRIVER",
+  "menu": {
+    "ourServices": "Our services",
+    "forBusiness": "For business",
+    "forChauffeurs": "For chauffeurs",
+    "help": "Help",
+    "overview": "Overview",
+    "corporations": "Corporations",
+    "travelAgencies": "Travel agencies",
+    "strategicPartnerships": "Strategic partnerships",
+    "events": "Events",
+    "cityToCity": "City-to-City rides",
+    "hailing": "Chauffeur hailing",
+    "airportTransfers": "Airport transfers",
+    "hourly": "Hourly hire",
+    "chauffeurService": "Chauffeur service",
+    "limousine": "Limousine service",
+    "language": "Language"
+  },
+  "hero": {
+    "title": "Chauffeur Service in Gulf Shores",
+    "subtitle": "Airport transfers (GUF/PNS/MOB), hourly hire, and city-to-city rides. Book easily — quickest response by phone or SMS.",
+    "callNow": "Call now",
+    "sms": "SMS",
+    "email": "Email",
+    "from": "From (address / airport)",
+    "to": "To (address / airport)",
+    "search": "Search"
+  },
+  "features": [
+    {
+      "title": "Competitive rates",
+      "desc": "Distance-based pricing that is fair and transparent."
+    },
+    {
+      "title": "Seamless travel",
+      "desc": "Complimentary airport wait time and flight tracking."
+    },
+    {
+      "title": "Flexible scheduling",
+      "desc": "Easy changes and clear communication via phone or SMS."
+    }
+  ],
+  "areas": {
+    "heading": "Professional private car in Coastal Alabama",
+    "desc": "Serving Gulf Shores, Orange Beach, Foley, Fairhope, Mobile (AL) and Pensacola (FL). Airport transfers to GUF, PNS and MOB, city-to-city rides, and hourly hire for errands or events.",
+    "airportTransfers": "Airport transfers",
+    "hourlyHire": "Hourly hire"
+  },
+  "footer": {
+    "company": "Company",
+    "explore": "Explore",
+    "forBusiness": "For Business",
+    "topRoutes": "Top routes",
+    "rights": "All rights reserved."
+  },
+  "pages": {
+    "airport": {
+      "title": "Airport transfers (GUF / PNS / MOB)",
+      "p1": "Stress-free pickups and drop-offs with flight tracking and complimentary wait time.",
+      "p2": "Ideal for vacations and business travel around Gulf Shores, Orange Beach, Foley, Mobile and Pensacola."
+    },
+    "hourly": {
+      "title": "Hourly hire — your driver on standby",
+      "p1": "Book by the hour for errands, shopping, medical appointments, or events.",
+      "p2": "Minimum 2 hours within Gulf Shores/Orange Beach. Flexible routing and stops included."
+    },
+    "city": {
+      "title": "City-to-City rides around Coastal Alabama",
+      "p1": "Comfortable direct trips between Gulf Shores, Mobile, Fairhope, and Pensacola.",
+      "p2": "Pricing is distance-based with transparent quotes before you confirm."
+    },
+    "hailing": {
+      "title": "On-demand chauffeur hailing (when available)",
+      "p1": "Text or call to check immediate availability. Response is usually faster by phone or SMS within local hours.",
+      "p2": "Great for last-minute pickups around Gulf Shores and nearby areas."
+    },
+    "chauffeur": {
+      "title": "Private chauffeur service — single-vehicle",
+      "p1": "Personalized, reliable service operated by Wagner using his own vehicle.",
+      "p2": "Perfect for travelers who value direct communication and consistent quality."
+    },
+    "limo": {
+      "title": "Premium private car service (sedan/SUV)",
+      "p1": "While we don’t operate stretch limousines, you’ll enjoy premium private car comfort with professional standards.",
+      "p2": "Ask about luggage capacity and child seats when you book."
+    },
+    "business": {
+      "overviewTitle": "Business travel made simple"
+    },
+    "help": {
+      "title": "Help & FAQs",
+      "q1": "How far in advance should I book airport pickups?",
+      "a1": "We recommend 24–48 hours for GUF, PNS, and MOB. During peak season, please inquire earlier.",
+      "q2": "What’s the cancellation policy?",
+      "a2": "Free cancellations up to 12 hours before pickup. After that, a fee may apply.",
+      "q3": "Do you provide child seats?",
+      "a3": "Yes, upon request. Please mention the child’s age and weight when booking."
+    }
+  }
+}

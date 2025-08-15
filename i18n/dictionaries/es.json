@@ -1,0 +1,102 @@
+{
+  "brand": "WAGNERDRIVER",
+  "menu": {
+    "ourServices": "Servicios",
+    "forBusiness": "Para empresas",
+    "forChauffeurs": "Para conductores",
+    "help": "Ayuda",
+    "overview": "Resumen",
+    "corporations": "Corporaciones",
+    "travelAgencies": "Agencias de viaje",
+    "strategicPartnerships": "Alianzas estratégicas",
+    "events": "Eventos",
+    "cityToCity": "Ciudad a ciudad",
+    "hailing": "Solicitar chofer",
+    "airportTransfers": "Traslados al aeropuerto",
+    "hourly": "Por hora",
+    "chauffeurService": "Servicio con chofer",
+    "limousine": "Servicio premium",
+    "language": "Idioma"
+  },
+  "hero": {
+    "title": "Servicio de chofer en Gulf Shores",
+    "subtitle": "Traslados (GUF/PNS/MOB), servicio por hora y viajes ciudad a ciudad. Reserve fácil — respuesta más rápida por teléfono o SMS.",
+    "callNow": "Llamar ahora",
+    "sms": "SMS",
+    "email": "Correo",
+    "from": "Origen (dirección / aeropuerto)",
+    "to": "Destino (dirección / aeropuerto)",
+    "search": "Buscar"
+  },
+  "features": [
+    {
+      "title": "Tarifas competitivas",
+      "desc": "Precios por distancia, justos y transparentes."
+    },
+    {
+      "title": "Viaje sin estrés",
+      "desc": "Espera de cortesía en aeropuerto y seguimiento de vuelo."
+    },
+    {
+      "title": "Agenda flexible",
+      "desc": "Cambios sencillos y comunicación clara por teléfono o SMS."
+    }
+  ],
+  "areas": {
+    "heading": "Auto privado profesional en la Costa de Alabama",
+    "desc": "Atendemos Gulf Shores, Orange Beach, Foley, Fairhope, Mobile (AL) y Pensacola (FL). Traslados a GUF, PNS y MOB, viajes ciudad a ciudad y servicio por hora.",
+    "airportTransfers": "Traslados al aeropuerto",
+    "hourlyHire": "Por hora"
+  },
+  "footer": {
+    "company": "Compañía",
+    "explore": "Explorar",
+    "forBusiness": "Para empresas",
+    "topRoutes": "Rutas populares",
+    "rights": "Todos los derechos reservados."
+  },
+  "pages": {
+    "airport": {
+      "title": "Traslados de aeropuerto (GUF / PNS / MOB)",
+      "p1": "Recogidas y dejadas sin estrés con seguimiento de vuelo y tiempo de espera de cortesía.",
+      "p2": "Ideal para vacaciones y negocios en la zona de Gulf Shores, Orange Beach, Foley, Mobile y Pensacola."
+    },
+    "hourly": {
+      "title": "Por hora — chofer a disposición",
+      "p1": "Reserve por horas para compras, citas médicas o eventos.",
+      "p2": "Mínimo de 2 horas en Gulf Shores/Orange Beach. Paradas y rutas flexibles."
+    },
+    "city": {
+      "title": "Viajes ciudad a ciudad en la Costa de Alabama",
+      "p1": "Viajes directos y cómodos entre Gulf Shores, Mobile, Fairhope y Pensacola.",
+      "p2": "Precio por distancia con cotización transparente antes de confirmar."
+    },
+    "hailing": {
+      "title": "Solicitar chofer bajo demanda (cuando disponible)",
+      "p1": "Llame o envíe SMS para disponibilidad inmediata. La respuesta suele ser más rápida por teléfono/SMS.",
+      "p2": "Óptimo para recogidas de último minuto en la región."
+    },
+    "chauffeur": {
+      "title": "Servicio con chofer — vehículo propio",
+      "p1": "Servicio personalizado operado por Wagner con su propio auto.",
+      "p2": "Ideal para quienes valoran la comunicación directa y calidad consistente."
+    },
+    "limo": {
+      "title": "Servicio premium (sedán/SUV)",
+      "p1": "No operamos limusinas extendidas, pero brindamos comodidad premium de auto privado.",
+      "p2": "Consulte capacidad de equipaje y sillas infantiles."
+    },
+    "business": {
+      "overviewTitle": "Viajes de negocios sin complicaciones"
+    },
+    "help": {
+      "title": "Ayuda y Preguntas frecuentes",
+      "q1": "¿Con cuánta anticipación debo reservar traslados de aeropuerto?",
+      "a1": "Recomendamos 24–48 horas para GUF, PNS y MOB. En temporada alta, solicite con más tiempo.",
+      "q2": "¿Cuál es la política de cancelación?",
+      "a2": "Cancelación gratuita hasta 12 horas antes. Posteriormente, puede aplicarse una tarifa.",
+      "q3": "¿Proporcionan sillas infantiles?",
+      "a3": "Sí, bajo solicitud. Indique edad y peso del niño al reservar."
+    }
+  }
+}

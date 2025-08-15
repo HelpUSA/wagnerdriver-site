@@ -1,0 +1,102 @@
+{
+  "brand": "WAGNERDRIVER",
+  "menu": {
+    "ourServices": "Serviços",
+    "forBusiness": "Para empresas",
+    "forChauffeurs": "Para motoristas",
+    "help": "Ajuda",
+    "overview": "Visão geral",
+    "corporations": "Empresas",
+    "travelAgencies": "Agências de viagem",
+    "strategicPartnerships": "Parcerias",
+    "events": "Eventos",
+    "cityToCity": "Cidade-a-cidade",
+    "hailing": "Chamar motorista",
+    "airportTransfers": "Traslados de aeroporto",
+    "hourly": "Por hora",
+    "chauffeurService": "Carro com motorista",
+    "limousine": "Serviço premium",
+    "language": "Idioma"
+  },
+  "hero": {
+    "title": "Serviço de motorista em Gulf Shores",
+    "subtitle": "Traslados de aeroporto (GUF/PNS/MOB), por hora e viagens cidade-a-cidade. Agende fácil — resposta mais rápida por telefone ou SMS.",
+    "callNow": "Ligar agora",
+    "sms": "SMS",
+    "email": "E-mail",
+    "from": "Origem (endereço / aeroporto)",
+    "to": "Destino (endereço / aeroporto)",
+    "search": "Buscar"
+  },
+  "features": [
+    {
+      "title": "Preços competitivos",
+      "desc": "Tarifas por distância, justas e transparentes."
+    },
+    {
+      "title": "Viagem sem stress",
+      "desc": "Espera cortesia no aeroporto e rastreio de voo."
+    },
+    {
+      "title": "Agenda flexível",
+      "desc": "Mudanças fáceis e comunicação clara por telefone ou SMS."
+    }
+  ],
+  "areas": {
+    "heading": "Carro privado profissional na Costa do Alabama",
+    "desc": "Atendemos Gulf Shores, Orange Beach, Foley, Fairhope, Mobile (AL) e Pensacola (FL). Traslados GUF, PNS e MOB, cidade-a-cidade e por hora para compromissos e eventos.",
+    "airportTransfers": "Traslados de aeroporto",
+    "hourlyHire": "Por hora"
+  },
+  "footer": {
+    "company": "Empresa",
+    "explore": "Explorar",
+    "forBusiness": "Para empresas",
+    "topRoutes": "Rotas populares",
+    "rights": "Todos os direitos reservados."
+  },
+  "pages": {
+    "airport": {
+      "title": "Traslados de aeroporto (GUF / PNS / MOB)",
+      "p1": "Embarques e desembarques sem stress, com rastreio de voo e tempo de espera cortesia.",
+      "p2": "Ideal para férias e negócios na região de Gulf Shores, Orange Beach, Foley, Mobile e Pensacola."
+    },
+    "hourly": {
+      "title": "Por hora — motorista à disposição",
+      "p1": "Reserve por hora para compras, consultas médicas ou eventos.",
+      "p2": "Mínimo de 2 horas em Gulf Shores/Orange Beach. Paradas e rotas flexíveis."
+    },
+    "city": {
+      "title": "Viagens cidade-a-cidade na Costa do Alabama",
+      "p1": "Viagens diretas e confortáveis entre Gulf Shores, Mobile, Fairhope e Pensacola.",
+      "p2": "Preço por distância com cotação transparente antes da confirmação."
+    },
+    "hailing": {
+      "title": "Chamar motorista sob demanda (quando disponível)",
+      "p1": "Envie SMS ou ligue para verificar disponibilidade imediata. Em geral, a resposta é mais rápida por telefone/SMS no horário local.",
+      "p2": "Ótimo para corridas de última hora na região."
+    },
+    "chauffeur": {
+      "title": "Carro com motorista — veículo próprio",
+      "p1": "Serviço personalizado operado pelo Wagner com o próprio carro.",
+      "p2": "Perfeito para quem valoriza comunicação direta e qualidade consistente."
+    },
+    "limo": {
+      "title": "Serviço premium (sedan/SUV)",
+      "p1": "Não operamos limousines alongadas, mas entregamos conforto premium de carro privado.",
+      "p2": "Consulte capacidade de bagagem e cadeirinha infantil."
+    },
+    "business": {
+      "overviewTitle": "Viagens corporativas sem complicação"
+    },
+    "help": {
+      "title": "Ajuda & FAQs",
+      "q1": "Com quanta antecedência devo reservar aeroporto?",
+      "a1": "Recomendamos 24–48h para GUF, PNS e MOB. Em alta temporada, peça com mais antecedência.",
+      "q2": "Qual é a política de cancelamento?",
+      "a2": "Cancelamento grátis até 12h antes do horário. Depois disso, pode haver taxa.",
+      "q3": "Possui cadeirinha infantil?",
+      "a3": "Sim, mediante solicitação. Informe a idade e o peso da criança ao reservar."
+    }
+  }
+}
