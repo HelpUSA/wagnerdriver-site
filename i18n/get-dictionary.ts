@@ -19,12 +19,46 @@ function deepMerge<T extends AnyObj, U extends AnyObj>(a: T, b: U): T & U {
   return out as T & U;
 }
 
-// Retorna `any` para simplificar o uso nos componentes
+function withCompat(dict: AnyObj): AnyObj {
+  const d = { ...dict };
+
+  // --- HERO / CTA fallbacks ---
+  d.hero ??= {};
+  // Alias antigo: alguns componentes usam hero.call
+  if (d.hero.call == null && d.hero.callNow != null) d.hero.call = d.hero.callNow;
+
+  d.cta ??= {};
+  if (d.cta.call == null)  d.cta.call  = d.hero.call ?? d.hero.callNow ?? 'Call now';
+  if (d.cta.sms == null)   d.cta.sms   = d.hero.sms ?? 'SMS';
+  if (d.cta.email == null) d.cta.email = d.hero.email ?? 'Email';
+
+  // --- HOW section fallback ---
+  d.how ??= {
+    title: 'How it works',
+    steps: [
+      { title: 'Reach out', desc: 'Call or SMS for the quickest booking.' },
+      { title: 'Confirm',   desc: 'We confirm pickup details and price.' },
+      { title: 'Ride',      desc: 'Relax — we track flights and plan routes.' },
+    ],
+  };
+
+  // --- NotFound fallback (alguns layouts usam textos) ---
+  d.notFound ??= {
+    title: 'Page not found',
+    cta: 'Go to homepage',
+  };
+
+  return d;
+}
+
+// Retorna `any` para simplificar nos componentes
 export async function getDictionary(locale: Locale): Promise<any> {
   const base: AnyObj = en as AnyObj;
-  let override: AnyObj = {};
-  if (locale === 'pt') override = pt as AnyObj;
-  else if (locale === 'es') override = es as AnyObj;
+  const override: AnyObj =
+    locale === 'pt' ? (pt as AnyObj)
+    : locale === 'es' ? (es as AnyObj)
+    : {};
 
-  return deepMerge(base, override) as AnyObj;
+  const merged = deepMerge(base, override);
+  return withCompat(merged);
 }
