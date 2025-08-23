@@ -1,0 +1,16 @@
+/* Reset para imagens e vídeos */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Links sem sublinhado por padrão */
+a {
+  @apply no-underline;
+}
+
+/* Botões padrão */
+button {
+  @apply cursor-pointer;
+}
