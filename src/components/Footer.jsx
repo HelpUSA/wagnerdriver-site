@@ -9,23 +9,26 @@ export default function Footer() {
         <div>
           <h3 className="font-semibold mb-3 text-lg">Contato</h3>
           <p className="text-sm">
-            Atendimento:{" "}
-            <span className="text-neutral-300">Todos os dias – 24h</span>
+            Endereço:{" "}
+            <span className="text-neutral-300">
+              241 E 16th Avenue, Gulf Shores, AL
+            </span>
+          </p>
+          <p className="text-sm mt-1">
+            Atendimento: <span className="text-neutral-300">24 horas</span>
           </p>
           <p className="text-sm mt-2">
             📞 WhatsApp:{" "}
             <a
-              href="https://wa.me/5583987392265"
+              href="https://wa.me/12516778489"
               target="_blank"
               rel="noopener noreferrer"
               className="text-accent hover:underline"
             >
-              +55 (83) 98739-2265
+              +1 (251) 677-8489
             </a>
           </p>
-          <p className="text-sm mt-1">
-            📧 contato@helpusa.com.br
-          </p>
+          <p className="text-sm">📧 wagnermrc@gmail.com</p>
         </div>
 
         {/* Coluna 2 - Navegação */}
@@ -45,7 +48,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             <li>
               <a
-                href="https://www.instagram.com/wagnerdriver/"
+                href="https://www.instagram.com/wagnermedeiroscarvalho/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-accent"
@@ -60,7 +63,7 @@ export default function Footer() {
       {/* Linha inferior */}
       <div className="text-center text-xs text-white/70 py-4 flex flex-col items-center">
         <img
-          src="/images/helpus-logo.png"
+          src="/images/wagner-driver-logo.png"
           alt="Wagner Driver logo"
           className="h-10 mb-1 rounded-full"
         />

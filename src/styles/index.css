@@ -1,16 +1,7 @@
-/* Reset para imagens e vídeos */
-img, video {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Links sem sublinhado por padrão */
-a {
-  @apply no-underline;
-}
+html, body, #root { height: 100%; }
 
-/* Botões padrão */
-button {
-  @apply cursor-pointer;
-}
+body { @apply bg-neutral-950 text-neutral-100; }

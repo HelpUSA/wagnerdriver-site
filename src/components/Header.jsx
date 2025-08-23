@@ -4,13 +4,14 @@ import { Menu, X } from "lucide-react";
 
 const links = [
   { href: "#home", label: "Início" },
-  { href: "#servicos", label: "Serviços" },
+  { href: "#servicos", label: "Serviços" },      // garanta que exista uma seção com id="servicos"
   { href: "#galeria", label: "Frota / Galeria" },
   { href: "#contato", label: "Contato" },
 ];
 
+// ✅ número EUA + mensagem de transporte
 const WHATSAPP_URL =
-  "https://wa.me/5583987392265?text=Quero%20agendar%20uma%20corrida";
+  "https://wa.me/12516778489?text=Quero%20agendar%20um%20transporte";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -20,7 +21,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
         <a href="#home" className="flex items-center space-x-3">
           <img
-            src="/images/helpus-logo.png" // troque se preferir outro logo
+            src="/images/wagner-driver-logo.png"  // ✅ novo logo
             alt="Wagner Driver - Logo"
             className="h-10 w-10 object-contain rounded-full"
           />
