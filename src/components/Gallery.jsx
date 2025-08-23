@@ -7,7 +7,6 @@ const IMAGES = [
   "/images/image03.png",
   "/images/image04.png",
   "/images/image05.png",
-  "/images/image06.png",
 ];
 
 export default function Gallery() {
@@ -25,6 +24,7 @@ export default function Gallery() {
               className="group aspect-square overflow-hidden rounded-xl shadow-lg border border-white/10 bg-neutral-900"
             >
               <picture>
+                {/* tenta .webp primeiro; se não existir, cai no .png abaixo */}
                 <source srcSet={src.replace(/\.png$/i, ".webp")} type="image/webp" />
                 <img
                   src={src}
@@ -34,6 +34,7 @@ export default function Gallery() {
                   decoding="async"
                   sizes="(min-width:1024px) 25vw, (min-width:768px) 33vw, 50vw"
                   onError={(e) => {
+                    // se algum arquivo faltar, esconde o card pra não quebrar o layout
                     const fig = e.currentTarget.closest("figure");
                     if (fig) fig.style.display = "none";
                   }}

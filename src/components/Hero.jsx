@@ -1,8 +1,10 @@
 // FILE: src/components/Hero.jsx
 import { useEffect, useRef } from "react";
 
-const WHATSAPP_URL =
-  "https://wa.me/12516778489?text=Quero%20agendar%20um%20transporte";
+// ✅ WhatsApp (EUA)
+const WA_PHONE = "12516778489";
+const WA_TEXT  = "Quero agendar um transporte";
+const WHATSAPP_URL = `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(WA_TEXT)}`;
 
 export default function Hero() {
   const vidRef = useRef(null);
@@ -11,9 +13,14 @@ export default function Hero() {
     const v = vidRef.current;
     if (!v) return;
     v.muted = true;
+    v.setAttribute("muted", ""); // iOS
     v.playsInline = true;
-    const tryPlay = async () => { try { await v.play(); } catch {} };
+
+    const tryPlay = async () => {
+      try { await v.play(); } catch {}
+    };
     tryPlay();
+
     const onUserInteract = () => tryPlay();
     window.addEventListener("click", onUserInteract, { once: true });
     window.addEventListener("scroll", onUserInteract, { once: true });
@@ -23,16 +30,17 @@ export default function Hero() {
     };
   }, []);
 
-  // scroll suave até #servicos (ou #cortes), compensando o header fixo
+  // scroll suave até #servicos (fallback #cortes), compensando header fixo
   const handleScrollToServicos = (e) => {
     e.preventDefault();
-    const target = document.querySelector("#servicos, #cortes");
+    const target =
+      document.getElementById("servicos") || document.getElementById("cortes");
     if (!target) return;
     const header = document.querySelector("header");
     const offset = (header?.offsetHeight || 0) + 8;
     const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
     window.scrollTo({ top: y, behavior: "smooth" });
-    window.history.replaceState(null, "", target.id === "servicos" ? "#servicos" : "#cortes");
+    window.history.replaceState(null, "", `#${target.id}`);
   };
 
   return (
@@ -46,7 +54,7 @@ export default function Hero() {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           poster="/images/image01.png"
         >
           <source
@@ -58,12 +66,13 @@ export default function Hero() {
         {/* Camada de escurecimento */}
         <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/55 to-black/20" />
 
-        {/* Overlay do Wagner (PNG com fundo transparente) */}
-        <div className="absolute right-3 sm:right-6 bottom-28 lg:bottom-24 z-20 pointer-events-none">
+        {/* Overlay do Wagner (menor e no canto inferior-direito) */}
+        <div className="absolute right-4 md:right-6 bottom-4 md:bottom-6 z-20 pointer-events-none">
           <img
             src="/images/wagner_driver_hero_overlay.png"
             alt="Wagner Driver - motorista executivo"
-            className="object-contain drop-shadow-2xl w-[34vw] max-w-[400px] min-w-[200px] lg:w-[28vw]"
+            className="object-contain drop-shadow-2xl w-[26vw] md:w-[22vw] max-w-[300px] md:max-w-[340px] min-w-[140px]"
+            decoding="async"
           />
         </div>
 

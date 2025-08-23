@@ -2,16 +2,18 @@
 import React from "react";
 
 export default function WhatsappIcon({
-  phone = "12516778489", // ✅ número dos EUA
-  text = "Quero agendar um transporte", // ✅ mensagem padrão
+  phone = "12516778489",                 // número dos EUA
+  text = "Quero agendar um transporte",  // mensagem padrão
 }) {
   const link = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+
   return (
     <a
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-5 right-5 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors z-50"
+      className="fixed bottom-5 right-5 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors z-50
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
       aria-label="Abrir conversa no WhatsApp"
       title="WhatsApp"
     >

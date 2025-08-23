@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-white pt-10">
+    <footer className="bg-primary text-white pt-10" id="contato">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-8 pb-8 border-b border-white/20">
         {/* Coluna 1 - Contato */}
         <div>
@@ -28,7 +28,15 @@ export default function Footer() {
               +1 (251) 677-8489
             </a>
           </p>
-          <p className="text-sm">📧 wagnermrc@gmail.com</p>
+          <p className="text-sm mt-1">
+            📧{" "}
+            <a
+              href="mailto:wagnermrc@gmail.com"
+              className="hover:underline text-neutral-300"
+            >
+              wagnermrc@gmail.com
+            </a>
+          </p>
         </div>
 
         {/* Coluna 2 - Navegação */}

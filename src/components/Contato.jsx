@@ -1,6 +1,10 @@
 // FILE: src/components/Contato.jsx
 import React, { useState } from "react";
 
+const WA_PHONE = "12516778489"; // +1 (251) 677-8489
+const WA_TEXT  = "Quero agendar um transporte";
+const WA_LINK  = `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(WA_TEXT)}`;
+
 export default function Contato() {
   const [mensagemStatus, setMensagemStatus] = useState("");
 
@@ -14,7 +18,6 @@ export default function Contato() {
         method: "POST",
         body: formData,
       });
-
       const data = await response.json();
       if (data.success) {
         setMensagemStatus("Mensagem enviada com sucesso! Em breve entraremos em contato.");
@@ -70,32 +73,32 @@ export default function Contato() {
         <p>
           📞 WhatsApp:{" "}
           <a
-            href="https://wa.me/5583987392265"
+            href={WA_LINK}
             target="_blank"
             rel="noopener noreferrer"
             className="text-accent font-semibold"
           >
-            +55 (83) 98739-2265
+            +1 (251) 677-8489
           </a>
         </p>
         <p>
           📧 E-mail:{" "}
           <a
-            href="mailto:contato@helpusa.com.br"
+            href="mailto:wagnermrc@gmail.com"
             className="text-accent font-semibold"
           >
-            contato@helpusa.com.br
+            wagnermrc@gmail.com
           </a>
         </p>
         <p>
           Instagram:{" "}
           <a
-            href="https://www.instagram.com/wagnerdriver/"
+            href="https://www.instagram.com/wagnermedeiroscarvalho/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-accent font-semibold"
           >
-            @wagnerdriver
+            @wagnermedeiroscarvalho
           </a>
         </p>
       </div>
