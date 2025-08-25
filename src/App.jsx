@@ -1,8 +1,12 @@
 // FILE: src/App.jsx
 import React, { useMemo, useEffect } from "react";
-import { createBrowserRouter, RouterProvider, useLocation } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useLocation,
+  Navigate,              // ⬅️ adicionado
+} from "react-router-dom";
 
-// ✅ inicializa i18next (carrega src/i18n.js)
 import "./i18n";
 import i18n from "./i18n";
 
@@ -16,18 +20,20 @@ import WhatsappIcon from "./components/WhatsappIcon";
 
 /**
  * Observa a URL e sincroniza o idioma do i18n.
- * - "/" e "/pt" => pt
- * - "/en"       => en
- * - "/es"       => es
+ * - "/pt" => pt
+ * - "/en" => en
+ * - "/es" => es
+ * - (sem prefixo) => en
  */
 function LanguageWatcher() {
   const { pathname } = useLocation();
 
   const lang = useMemo(() => {
     const seg = (pathname.split("/")[1] || "").toLowerCase();
+    if (seg === "pt") return "pt";
     if (seg === "en") return "en";
     if (seg === "es") return "es";
-    return "pt"; // padrão
+    return "en"; // ✅ padrão em inglês
   }, [pathname]);
 
   useEffect(() => {
@@ -43,8 +49,7 @@ function HomePage() {
       <LanguageWatcher />
       <Hero />
       <Sobre />
-      <Servicos />   {/* ✅ seção de serviços (#servicos) */}
-      {/* Gallery removido */}
+      <Servicos />
       <Contato />
     </>
   );
@@ -69,10 +74,10 @@ function NotFound() {
   );
 }
 
-// ✅ Rotas multilíngues
+// ✅ Rotas multilíngues (com redirect para EN)
 const router = createBrowserRouter(
   [
-    { path: "/", element: <HomePage /> },
+    { path: "/", element: <Navigate to="/en" replace /> }, // ⬅️ abre em inglês
     { path: "/pt", element: <HomePage /> },
     { path: "/en", element: <HomePage /> },
     { path: "/es", element: <HomePage /> },

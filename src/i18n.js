@@ -6,29 +6,28 @@ import pt from "./locales/pt.json";
 import en from "./locales/en.json";
 import es from "./locales/es.json";
 
-// Detecta o idioma inicial pela rota
-const path = typeof window !== "undefined" ? window.location.pathname : "";
-const seg = (path.split("/")[1] || "").toLowerCase();
-const initialLng = seg === "en" ? "en" : seg === "es" ? "es" : "pt";
+// Idioma inicial pela rota; padrão = en
+function getInitialLang() {
+  if (typeof window === "undefined") return "en";
+  const seg = (window.location.pathname.split("/")[1] || "").toLowerCase();
+  return seg === "pt" || seg === "en" || seg === "es" ? seg : "en";
+}
 
-i18n
-  .use(initReactI18next)
-  .init({
-    resources: {
-      pt: { translation: pt },
-      en: { translation: en },
-      es: { translation: es },
-    },
-    lng: initialLng,            // 👈 idioma inicial pela URL
-    fallbackLng: "pt",
-    supportedLngs: ["pt", "en", "es"],
-    interpolation: { escapeValue: false }, // 👈 permite <Trans />
-    returnEmptyString: false,
-    react: {
-      useSuspense: false,
-      // mantém tags básicas se você usar <Trans> com HTML simples
-      transKeepBasicHtmlNodesFor: ["br", "strong", "i", "b", "p", "span"],
-    },
-  });
+i18n.use(initReactI18next).init({
+  resources: {
+    pt: { translation: pt },
+    en: { translation: en },
+    es: { translation: es },
+  },
+  lng: getInitialLang(),         // 👈 inicia pelo prefixo; sem prefixo => "en"
+  fallbackLng: "en",             // 👈 fallback em inglês
+  supportedLngs: ["pt", "en", "es"],
+  interpolation: { escapeValue: false },
+  returnEmptyString: false,
+  react: {
+    useSuspense: false,
+    transKeepBasicHtmlNodesFor: ["br", "strong", "i", "b", "p", "span"],
+  },
+});
 
 export default i18n;

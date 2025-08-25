@@ -24,19 +24,19 @@ function useClickAway(ref, onAway) {
 }
 
 export default function Header() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
 
-  // links sem "galeria"
   const links = [
     { href: "#home", label: t("menu.home") },
     { href: "#servicos", label: t("menu.services") },
     { href: "#contato", label: t("menu.contact") },
   ];
 
-  // idioma atual pela URL
-  const pathname = typeof window !== "undefined" ? window.location.pathname.toLowerCase() : "/";
-  const currentLang = pathname.startsWith("/en") ? "en" : pathname.startsWith("/es") ? "es" : "pt";
+  // ✅ idioma atual pela URL, default = en
+  const pathname = typeof window !== "undefined" ? window.location.pathname : "/";
+  const seg = (pathname.split("/")[1] || "").toLowerCase();
+  const currentLang = seg === "pt" || seg === "en" || seg === "es" ? seg : "en";
 
   // ---- Dropdown de idiomas (desktop) ----
   const [langOpen, setLangOpen] = useState(false);
@@ -59,7 +59,6 @@ export default function Header() {
     </a>
   );
 
-  // WhatsApp no idioma
   const whatsappUrl = `https://wa.me/12516778489?text=${encodeURIComponent(t("whatsapp.text"))}`;
 
   return (
