@@ -18,7 +18,10 @@ export default function Sobre() {
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 text-center mb-8">
-            <Trans i18nKey="about.why.title" />
+            <Trans
+              i18nKey="about.why.title"
+              components={{ c: <span className="text-yellow-600" /> }}
+            />
           </h2>
 
           <div className="grid gap-6 sm:grid-cols-3">
