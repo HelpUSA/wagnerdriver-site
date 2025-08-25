@@ -1,0 +1,82 @@
+{
+  "menu": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "gallery": "Flota / Galería",
+    "contact": "Contacto",
+    "schedule": "Agendar"
+  },
+  "hero": {
+    "title_html": "Tu destino con <c>comodidad y seguridad</c>",
+    "subtitle": "Transporte ejecutivo en Gulf Shores (AL) y región. Aeropuertos, eventos y viajes con puntualidad y comodidad.",
+    "book": "Agendar viaje",
+    "services": "Nuestros servicios"
+  },
+  "services": {
+    "sectionTitle": "Nuestros Servicios",
+    "cta": "Solicitar presupuesto por WhatsApp",
+    "airport": {
+      "title": "Traslado al Aeropuerto (PNS, MOB, GPT)",
+      "desc": "Recogida y entrega con monitoreo de vuelos y tiempo de espera de cortesía."
+    },
+    "events": {
+      "title": "Eventos y Bodas",
+      "desc": "Chofer con traje, vehículo higienizado y puntualidad para tus momentos especiales."
+    },
+    "long": {
+      "title": "Largas Distancias",
+      "desc": "Viajes cómodos a Mobile, Pensacola, Destin, New Orleans, Birmingham y la región."
+    },
+    "tour": {
+      "title": "City/Beach Tour Gulf Shores",
+      "desc": "Recorridos por Gulf Shores, Orange Beach, Gulf State Park, The Wharf y lugares icónicos."
+    }
+  },
+  "about": {
+    "title": "Sobre Wagner Driver",
+    "text1": "Wagner Driver ofrece servicios de transporte ejecutivo en João Pessoa y región, enfocados en comodidad, seguridad y puntualidad. Ya sea para traslados diarios, viajes intermunicipales o transfer al aeropuerto, cuentas con atención exclusiva y profesional.",
+    "text2": "Nuestro objetivo es garantizar que cada cliente viaje con tranquilidad, disfrutando de una experiencia diferenciada de transporte privado.",
+    "why": {
+      "title": "¿Por qué elegir a <c>Wagner Driver</c>?",
+      "comfort": {
+        "title": "Comodidad y conveniencia",
+        "text": "Vehículos siempre limpios, climatizados y preparados para tu viaje."
+      },
+      "punctuality": {
+        "title": "Puntualidad",
+        "text": "Llega a tiempo para tus compromisos, eventos o vuelos."
+      },
+      "security": {
+        "title": "Seguridad",
+        "text": "Conductor experimentado, ruta monitoreada y total confianza en el servicio."
+      }
+    }
+  },
+  "contact": {
+    "title": "Ponte en contacto",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "message": "Mensaje",
+      "send": "Enviar"
+    },
+    "success": "¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.",
+    "error": "Error al enviar el mensaje. Inténtalo de nuevo.",
+    "serverError": "Error al conectar con el servidor."
+  },
+  "footer": {
+    "contactTitle": "Contacto",
+    "address": "Dirección: 241 E 16th Avenue, Gulf Shores, AL",
+    "hours": "Atención: 24 horas",
+    "linksTitle": "Enlaces rápidos",
+    "follow": "Síguenos",
+    "developed": "Desarrollado por"
+  },
+  "whatsapp": {
+    "text": "Quiero agendar un viaje"
+  },
+  "call": {
+    "cta": "Llama ahora",
+    "badge": "Atención 24/7"
+  }
+}

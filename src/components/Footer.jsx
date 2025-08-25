@@ -1,74 +1,37 @@
 // FILE: src/components/Footer.jsx
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-primary text-white pt-10" id="contato">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-8 pb-8 border-b border-white/20">
-        {/* Coluna 1 - Contato */}
         <div>
-          <h3 className="font-semibold mb-3 text-lg">Contato</h3>
-          <p className="text-sm">
-            Endereço:{" "}
-            <span className="text-neutral-300">
-              241 E 16th Avenue, Gulf Shores, AL
-            </span>
-          </p>
-          <p className="text-sm mt-1">
-            Atendimento: <span className="text-neutral-300">24 horas</span>
-          </p>
-          <p className="text-sm mt-2">
-            📞 WhatsApp:{" "}
-            <a
-              href="https://wa.me/12516778489"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent hover:underline"
-            >
-              +1 (251) 677-8489
-            </a>
-          </p>
-          <p className="text-sm mt-1">
-            📧{" "}
-            <a
-              href="mailto:wagnermrc@gmail.com"
-              className="hover:underline text-neutral-300"
-            >
-              wagnermrc@gmail.com
-            </a>
-          </p>
+          <h3 className="font-semibold mb-3 text-lg">{t("footer.contactTitle")}</h3>
+          <p className="text-sm">{t("footer.address")}</p>
+          <p className="text-sm mt-1">{t("footer.hours")}</p>
+          <p className="text-sm mt-2">📞 WhatsApp: +1 (251) 677-8489</p>
+          <p className="text-sm mt-1">📧 wagnermrc@gmail.com</p>
         </div>
 
-        {/* Coluna 2 - Navegação */}
         <div>
-          <h3 className="font-semibold mb-3 text-lg">Links rápidos</h3>
+          <h3 className="font-semibold mb-3 text-lg">{t("footer.linksTitle")}</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#home" className="hover:text-accent">Início</a></li>
-            <li><a href="#servicos" className="hover:text-accent">Serviços</a></li>
-            <li><a href="#galeria" className="hover:text-accent">Frota / Galeria</a></li>
-            <li><a href="#contato" className="hover:text-accent">Contato</a></li>
+            <li><a href="#home">{t("menu.home")}</a></li>
+            <li><a href="#servicos">{t("menu.services")}</a></li>
+            <li><a href="#galeria">{t("menu.gallery")}</a></li>
+            <li><a href="#contato">{t("menu.contact")}</a></li>
           </ul>
         </div>
 
-        {/* Coluna 3 - Redes sociais */}
         <div>
-          <h3 className="font-semibold mb-3 text-lg">Siga-nos</h3>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <a
-                href="https://www.instagram.com/wagnermedeiroscarvalho/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-accent"
-              >
-                Instagram
-              </a>
-            </li>
-          </ul>
+          <h3 className="font-semibold mb-3 text-lg">{t("footer.follow")}</h3>
+          <a href="https://www.instagram.com/wagnermedeiroscarvalho/">Instagram</a>
         </div>
       </div>
 
-      {/* Linha inferior */}
       <div className="text-center text-xs text-white/70 py-4 flex flex-col items-center">
         <img
           src="/images/wagner-driver-logo.png"
@@ -76,16 +39,10 @@ export default function Footer() {
           className="h-10 mb-1 rounded-full"
         />
         <span>
-          Desenvolvido por{" "}
-          <a
-            href="https://helpusa.com.br"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline hover:text-white"
-          >
+          {t("footer.developed")}{" "}
+          <a href="https://helpusa.com.br" className="underline hover:text-white">
             HelpUS
-          </a>{" "}
-          • Todos os direitos reservados
+          </a>
         </span>
       </div>
     </footer>

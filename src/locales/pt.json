@@ -1,0 +1,82 @@
+{
+  "menu": {
+    "home": "Início",
+    "services": "Serviços",
+    "gallery": "Frota / Galeria",
+    "contact": "Contato",
+    "schedule": "Agendar"
+  },
+  "hero": {
+    "title_html": "Seu destino com <c>conforto e segurança</c>",
+    "subtitle": "Transporte executivo em Gulf Shores (AL) e região. Aeroportos, eventos e viagens com pontualidade e comodidade.",
+    "book": "Agendar corrida",
+    "services": "Nossos serviços"
+  },
+  "services": {
+    "sectionTitle": "Nossos Serviços",
+    "cta": "Solicitar orçamento pelo WhatsApp",
+    "airport": {
+      "title": "Traslado para Aeroporto (PNS, MOB, GPT)",
+      "desc": "Pick-up e drop-off com monitoramento de voo e tempo de espera cortesia."
+    },
+    "events": {
+      "title": "Eventos e Casamentos",
+      "desc": "Chofer de terno, veículo higienizado e pontualidade para seus momentos especiais."
+    },
+    "long": {
+      "title": "Longas Distâncias",
+      "desc": "Viagens confortáveis para Mobile, Pensacola, Destin, New Orleans, Birmingham e região."
+    },
+    "tour": {
+      "title": "City/Beach Tour Gulf Shores",
+      "desc": "Passeios por Gulf Shores, Orange Beach, Gulf State Park, The Wharf e pontos icônicos."
+    }
+  },
+  "about": {
+    "title": "Sobre o Wagner Driver",
+    "text1": "O Wagner Driver oferece serviços de transporte executivo em João Pessoa e região, com foco em conforto, segurança e pontualidade. Seja para deslocamentos diários, viagens intermunicipais ou transfer para aeroportos, você conta com atendimento exclusivo e profissional.",
+    "text2": "Nosso objetivo é garantir que cada cliente viaje com tranquilidade, aproveitando uma experiência diferenciada de transporte privado.",
+    "why": {
+      "title": "Por que escolher o <c>Wagner Driver</c>?",
+      "comfort": {
+        "title": "Conforto e comodidade",
+        "text": "Veículos sempre limpos, climatizados e preparados para sua viagem."
+      },
+      "punctuality": {
+        "title": "Pontualidade",
+        "text": "Chegue no horário certo para compromissos, eventos ou voos."
+      },
+      "security": {
+        "title": "Segurança",
+        "text": "Motorista experiente, trajeto monitorado e total confiança no serviço."
+      }
+    }
+  },
+  "contact": {
+    "title": "Entre em contato",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "message": "Mensagem",
+      "send": "Enviar"
+    },
+    "success": "Mensagem enviada com sucesso! Em breve entraremos em contato.",
+    "error": "Erro ao enviar a mensagem. Tente novamente.",
+    "serverError": "Erro ao conectar com o servidor."
+  },
+  "footer": {
+    "contactTitle": "Contato",
+    "address": "Endereço: 241 E 16th Avenue, Gulf Shores, AL",
+    "hours": "Atendimento: 24 horas",
+    "linksTitle": "Links rápidos",
+    "follow": "Siga-nos",
+    "developed": "Desenvolvido por"
+  },
+  "whatsapp": {
+    "text": "Quero agendar um transporte"
+  },
+  "call": {
+    "cta": "Ligue agora",
+    "badge": "Atendimento 24h"
+  }
+}

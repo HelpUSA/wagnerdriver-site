@@ -1,27 +1,73 @@
 // FILE: src/components/Header.jsx
-import React, { useState } from "react";
-import { Menu, X } from "lucide-react";
+import React, { useState, useRef, useEffect } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-const links = [
-  { href: "#home", label: "Início" },
-  { href: "#servicos", label: "Serviços" },      // garanta que exista uma seção com id="servicos"
-  { href: "#galeria", label: "Frota / Galeria" },
-  { href: "#contato", label: "Contato" },
-];
+function withHash(path) {
+  const hash = window.location.hash || "";
+  return `${path}${hash}`;
+}
 
-// ✅ número EUA + mensagem de transporte
-const WHATSAPP_URL =
-  "https://wa.me/12516778489?text=Quero%20agendar%20um%20transporte";
+function useClickAway(ref, onAway) {
+  useEffect(() => {
+    const handler = (e) => {
+      if (!ref.current) return;
+      if (!ref.current.contains(e.target)) onAway?.();
+    };
+    document.addEventListener("mousedown", handler);
+    document.addEventListener("touchstart", handler);
+    return () => {
+      document.removeEventListener("mousedown", handler);
+      document.removeEventListener("touchstart", handler);
+    };
+  }, [ref, onAway]);
+}
 
 export default function Header() {
+  const { t, i18n } = useTranslation();
   const [open, setOpen] = useState(false);
+
+  // links sem "galeria"
+  const links = [
+    { href: "#home", label: t("menu.home") },
+    { href: "#servicos", label: t("menu.services") },
+    { href: "#contato", label: t("menu.contact") },
+  ];
+
+  // idioma atual pela URL
+  const pathname = typeof window !== "undefined" ? window.location.pathname.toLowerCase() : "/";
+  const currentLang = pathname.startsWith("/en") ? "en" : pathname.startsWith("/es") ? "es" : "pt";
+
+  // ---- Dropdown de idiomas (desktop) ----
+  const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef(null);
+  useClickAway(langRef, () => setLangOpen(false));
+
+  const langLabel = currentLang === "en" ? "English" : currentLang === "es" ? "Español" : "Português";
+
+  const LangItem = ({ code, label, to }) => (
+    <a
+      href={withHash(to)}
+      className={[
+        "block px-3 py-2 rounded-md text-sm",
+        currentLang === code ? "bg-white text-black font-semibold" : "hover:bg-white/10",
+      ].join(" ")}
+      onClick={() => setLangOpen(false)}
+      aria-current={currentLang === code ? "true" : "false"}
+    >
+      {label}
+    </a>
+  );
+
+  // WhatsApp no idioma
+  const whatsappUrl = `https://wa.me/12516778489?text=${encodeURIComponent(t("whatsapp.text"))}`;
 
   return (
     <header className="bg-primary/90 text-white fixed top-0 left-0 w-full z-50 shadow-md border-b border-white/10">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
         <a href="#home" className="flex items-center space-x-3">
           <img
-            src="/images/wagner-driver-logo.png"  // ✅ novo logo
+            src="/images/wagner-driver-logo.png"
             alt="Wagner Driver - Logo"
             className="h-10 w-10 object-contain rounded-full"
           />
@@ -30,6 +76,48 @@ export default function Header() {
           </span>
         </a>
 
+        {/* Desktop */}
+        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+          {links.map((l) => (
+            <a key={l.href} href={l.href} className="hover:text-accent transition">
+              {l.label}
+            </a>
+          ))}
+
+          {/* Popdown de idiomas */}
+          <div className="relative" ref={langRef}>
+            <button
+              onClick={() => setLangOpen((v) => !v)}
+              className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-white/30 hover:bg-white/10 transition"
+              aria-haspopup="menu"
+              aria-expanded={langOpen ? "true" : "false"}
+            >
+              {langLabel} <ChevronDown size={16} className="opacity-80" />
+            </button>
+
+            {langOpen && (
+              <div
+                role="menu"
+                className="absolute right-0 mt-2 w-40 bg-neutral-900/95 backdrop-blur border border-white/10 rounded-xl p-1 shadow-xl"
+              >
+                <LangItem code="en" label="English" to="/en" />
+                <LangItem code="pt" label="Português" to="/pt" />
+                <LangItem code="es" label="Español" to="/es" />
+              </div>
+            )}
+          </div>
+
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 rounded-2xl bg-accent text-black font-medium hover:opacity-90 transition"
+          >
+            {t("menu.schedule")}
+          </a>
+        </nav>
+
+        {/* Mobile burger */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden text-white focus:outline-none"
@@ -37,24 +125,9 @@ export default function Header() {
         >
           {open ? <X /> : <Menu />}
         </button>
-
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-          {links.map((l) => (
-            <a key={l.href} href={l.href} className="hover:text-accent transition">
-              {l.label}
-            </a>
-          ))}
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 rounded-2xl bg-accent text-black font-medium hover:opacity-90 transition"
-          >
-            Agendar
-          </a>
-        </nav>
       </div>
 
+      {/* Mobile drawer */}
       {open && (
         <div className="md:hidden bg-primary/95 text-white px-4 pb-4 space-y-2 border-t border-white/10">
           {links.map((l) => (
@@ -67,14 +140,33 @@ export default function Header() {
               {l.label}
             </a>
           ))}
+
+          {/* Popdown simples para mobile */}
+          <details className="pt-1">
+            <summary className="cursor-pointer list-none px-2 py-2 rounded-md bg-white/10">
+              {langLabel}
+            </summary>
+            <div className="pl-2 mt-2 flex flex-col">
+              <a href={withHash("/en")} className="py-1.5" onClick={() => setOpen(false)}>
+                English
+              </a>
+              <a href={withHash("/pt")} className="py-1.5" onClick={() => setOpen(false)}>
+                Português
+              </a>
+              <a href={withHash("/es")} className="py-1.5" onClick={() => setOpen(false)}>
+                Español
+              </a>
+            </div>
+          </details>
+
           <a
-            href={WHATSAPP_URL}
+            href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="block px-4 py-2 rounded-2xl bg-accent text-black text-center font-medium hover:opacity-90 transition"
+            className="block px-4 py-2 rounded-2xl bg-accent text-black text-center font-medium hover:opacity-90 transition mt-2"
             onClick={() => setOpen(false)}
           >
-            Agendar
+            {t("menu.schedule")}
           </a>
         </div>
       )}

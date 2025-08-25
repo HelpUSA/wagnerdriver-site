@@ -1,23 +1,50 @@
 // FILE: src/App.jsx
-import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import React, { useMemo, useEffect } from "react";
+import { createBrowserRouter, RouterProvider, useLocation } from "react-router-dom";
+
+// ✅ inicializa i18next (carrega src/i18n.js)
+import "./i18n";
+import i18n from "./i18n";
 
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Sobre from "./components/Sobre";
-import Servicos from "./components/Servicos"; // ✅ substitui Cortes
-import Gallery from "./components/Gallery";
+import Servicos from "./components/Servicos";
 import Contato from "./components/Contato";
 import Footer from "./components/Footer";
 import WhatsappIcon from "./components/WhatsappIcon";
 
+/**
+ * Observa a URL e sincroniza o idioma do i18n.
+ * - "/" e "/pt" => pt
+ * - "/en"       => en
+ * - "/es"       => es
+ */
+function LanguageWatcher() {
+  const { pathname } = useLocation();
+
+  const lang = useMemo(() => {
+    const seg = (pathname.split("/")[1] || "").toLowerCase();
+    if (seg === "en") return "en";
+    if (seg === "es") return "es";
+    return "pt"; // padrão
+  }, [pathname]);
+
+  useEffect(() => {
+    if (i18n.language !== lang) i18n.changeLanguage(lang);
+  }, [lang]);
+
+  return null;
+}
+
 function HomePage() {
   return (
     <>
+      <LanguageWatcher />
       <Hero />
       <Sobre />
       <Servicos />   {/* ✅ seção de serviços (#servicos) */}
-      <Gallery />
+      {/* Gallery removido */}
       <Contato />
     </>
   );
@@ -42,9 +69,13 @@ function NotFound() {
   );
 }
 
+// ✅ Rotas multilíngues
 const router = createBrowserRouter(
   [
     { path: "/", element: <HomePage /> },
+    { path: "/pt", element: <HomePage /> },
+    { path: "/en", element: <HomePage /> },
+    { path: "/es", element: <HomePage /> },
     { path: "*", element: <NotFound /> },
   ],
   {
@@ -63,7 +94,8 @@ export default function App() {
         <RouterProvider router={router} />
       </main>
       <Footer />
-      <WhatsappIcon phone="5583987392265" text="Quero agendar uma corrida" />
+      {/* Usa defaults: phone=+1 251 677-8489 e texto via i18n */}
+      <WhatsappIcon />
     </div>
   );
 }

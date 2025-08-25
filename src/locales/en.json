@@ -1,0 +1,82 @@
+{
+  "menu": {
+    "home": "Home",
+    "services": "Services",
+    "gallery": "Fleet / Gallery",
+    "contact": "Contact",
+    "schedule": "Book"
+  },
+  "hero": {
+    "title_html": "Your destination with <c>comfort and safety</c>",
+    "subtitle": "Executive transportation in Gulf Shores (AL) and nearby. Airports, events and trips with punctuality and convenience.",
+    "book": "Book a ride",
+    "services": "Our services"
+  },
+  "services": {
+    "sectionTitle": "Our Services",
+    "cta": "Request a quote on WhatsApp",
+    "airport": {
+      "title": "Airport Transfer (PNS, MOB, GPT)",
+      "desc": "Pick-up and drop-off with flight monitoring and complimentary waiting time."
+    },
+    "events": {
+      "title": "Events and Weddings",
+      "desc": "Chauffeur in suit, sanitized vehicle and punctuality for your special moments."
+    },
+    "long": {
+      "title": "Long Distances",
+      "desc": "Comfortable trips to Mobile, Pensacola, Destin, New Orleans, Birmingham and the region."
+    },
+    "tour": {
+      "title": "City/Beach Tour Gulf Shores",
+      "desc": "Tours through Gulf Shores, Orange Beach, Gulf State Park, The Wharf and iconic spots."
+    }
+  },
+  "about": {
+    "title": "About Wagner Driver",
+    "text1": "Wagner Driver offers executive transportation services in João Pessoa and region, focused on comfort, safety and punctuality. Whether for daily transfers, intercity trips or airport shuttles, you can count on exclusive and professional service.",
+    "text2": "Our goal is to ensure that every client travels with peace of mind, enjoying a differentiated private transport experience.",
+    "why": {
+      "title": "Why choose <c>Wagner Driver</c>?",
+      "comfort": {
+        "title": "Comfort and convenience",
+        "text": "Vehicles always clean, air-conditioned and ready for your trip."
+      },
+      "punctuality": {
+        "title": "Punctuality",
+        "text": "Arrive on time for appointments, events or flights."
+      },
+      "security": {
+        "title": "Safety",
+        "text": "Experienced driver, monitored route and complete trust in the service."
+      }
+    }
+  },
+  "contact": {
+    "title": "Get in touch",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send"
+    },
+    "success": "Message sent successfully! We will contact you soon.",
+    "error": "Error sending message. Please try again.",
+    "serverError": "Error connecting to the server."
+  },
+  "footer": {
+    "contactTitle": "Contact",
+    "address": "Address: 241 E 16th Avenue, Gulf Shores, AL",
+    "hours": "Service: 24 hours",
+    "linksTitle": "Quick Links",
+    "follow": "Follow us",
+    "developed": "Developed by"
+  },
+  "whatsapp": {
+    "text": "I’d like to book a ride"
+  },
+  "call": {
+    "cta": "Call now",
+    "badge": "Open 24/7"
+  }
+}
